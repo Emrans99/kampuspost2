@@ -1,4 +1,4 @@
-## KampusPost – React Native Projesi
+## KampüsPost Platformu – Mobil Uygulama
 Görseller:
 <img width="620" height="989" alt="Ekran görüntüsü 2025-12-03 150622" src="https://github.com/user-attachments/assets/660e0f7d-1460-4f9f-b3f0-ef184a95c794" />
 <img width="618" height="974" alt="Ekran görüntüsü 2025-12-03 150654" src="https://github.com/user-attachments/assets/2b271cad-f253-443c-8777-8ea8ca2b656e" />
@@ -12,7 +12,7 @@ Görseller:
 <img width="1719" height="760" alt="Ekran görüntüsü 2025-12-03 151741" src="https://github.com/user-attachments/assets/728d60a3-3f9b-4340-a08b-1bff278b6798" />
 <img width="1283" height="971" alt="Ekran görüntüsü 2025-12-03 151453" src="https://github.com/user-attachments/assets/4ff0c665-dfc3-4265-9b87-e906c13b2526" />
 
-Bu proje, React Native kullanılarak geliştirilmiş basit bir **KampusPost** uygulaması iskeletidir.  
+Bu proje, React Native kullanılarak geliştirilmiş gelişmiş bir **KampüsPost** sosyal medya platformu prototipidir.
 Ödev kapsamında şu özellikler uygulanmıştır:
 
 - **Giriş ekranı (`LoginScreen`)** – E‑posta, şifre alanları ve “Giriş Yap / Kayıt Ol” butonları
@@ -53,20 +53,20 @@ npm run android
   Açılış ekranı **LoginScreen**’dir (`initialRouteName="Login"`).
 
 - **LoginScreen**  
-  - Üst yazı: **“KampüsPost’a Hoş Geldiniz!”**  
-  - Başlık: **“Giriş Yap”**  
+  - Üst yazı: **“KampüsPost Platformu”**  
+  - Başlık: **“Oturum Açın”**  
   - Alanlar: E‑posta, Şifre (`CustomInput` bileşeni ile)  
   - Butonlar:
-    - **“Giriş Yap”** → şimdilik doğrulama yapmadan **HomeScreen**’e yönlendirir.
-    - **“Kayıt Ol”** → **RegisterScreen**’e yönlendirir.
+    - **“Giriş”** → şimdilik doğrulama yapmadan **HomeScreen**’e yönlendirir.
+    - **“Yeni Hesap Oluştur”** → **RegisterScreen**’e yönlendirir.
 
 - **RegisterScreen**  
   - Alanlar: E‑posta, Şifre, Şifre Tekrar (tamamı `CustomInput` kullanır).  
-  - **“Kayıt Ol”** butonu:
-    - Şifreler uyuşmazsa: `Alert.alert("Hata", "Şifreler uyuşmuyor!")`
+  - **“Üyeliği Tamamla”** butonu:
+    - Şifreler uyuşmazsa: `Alert.alert("Dikkat", "Girdiğiniz parolalar birbiriyle eşleşmiyor.")`
     - Şifreler aynıysa:
       - `console.log("Kayıt başarılı", { email })`
-      - `Alert.alert("Başarılı", "Kayıt başarılı! Giriş yapabilirsiniz.")`
+      - `Alert.alert("İşlem Tamam", "Hesabınız hazır. Giriş ekranına yönlendiriliyorsunuz.")`
       - Ardından **LoginScreen**’e geri yönlendirir.
 
 - **HomeScreen**  
@@ -76,7 +76,7 @@ npm run android
     - Başlık (`title`) → kalın/büyük
     - İçerik (`body`) → altında normal metin şeklinde gösterilir.  
   - Veri yüklenirken:
-    - Ortada spinner ve **“Yükleniyor…”** metni görünür.
+    - Ortada spinner ve **“Veriler Yükleniyor…”** metni görünür.
 
 ## Proje Klasör Yapısı
 
@@ -155,17 +155,17 @@ KampusPost/
   `App.tsx` içindeki `NavigationContainer` + `Stack.Navigator` kodunun ekran görüntüsü.
 
 - **Giriş ekranı**  
-  `KampüsPost’a Hoş Geldiniz!` üst yazısı, `Giriş Yap` başlığı, e‑posta / şifre alanları ve  
-  **“Giriş Yap” / “Kayıt Ol”** butonlarının göründüğü ekran.
+  `KampüsPost Platformu` üst yazısı, `Oturum Açın` başlığı, e‑posta / şifre alanları ve  
+  **“Giriş” / “Yeni Hesap Oluştur”** butonlarının göründüğü ekran.
 
 - **Kayıt ekranı**  
-  E‑posta, Şifre, Şifre Tekrar alanları ve **“Kayıt Ol”** butonunun göründüğü ekran.  
+  E‑posta, Şifre, Şifre Tekrar alanları ve **“Üyeliği Tamamla”** butonunun göründüğü ekran.  
   Şifreler uyuşmadığında çıkan **Alert** penceresinin ekran görüntüsü.  
   Şifreler uyduğunda konsolda görünen **“Kayıt başarılı”** logunun ekran görüntüsü.
 
 - **HomeScreen ve veri çekme**  
   - `Posts verisi:` log’unun göründüğü **DevTools Console** veya terminal ekranı.  
   - `FlatList` ile post’ların listelendiği HomeScreen ekran görüntüsü.  
-  - Varsa **“Yükleniyor…”** metninin göründüğü anın ekran görüntüsü.
+  - Varsa **“Veriler Yükleniyor…”** metninin göründüğü anın ekran görüntüsü.
 
 
